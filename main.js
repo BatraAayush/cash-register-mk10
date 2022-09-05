@@ -20,14 +20,19 @@ billBtn.addEventListener("click", () => {
     errorMessage("Bill Amount should be greater than 0");
   }
 });
+
 checkBtn.addEventListener("click", () => {
   message.style.display = "none";
-  if (Number(cashAmt.value) >= Number(billAmt.value)) {
-    let returnAmount = Number(cashAmt.value) - Number(billAmt.value);
-    noteCalculator(returnAmount);
-    rtn.innerHTML = "₹" + returnAmount;
+  if (Number(billAmt.value) > 0) {
+    if (Number(cashAmt.value) >= Number(billAmt.value)) {
+      let returnAmount = Number(cashAmt.value) - Number(billAmt.value);
+      noteCalculator(returnAmount);
+      rtn.innerHTML = "₹" + returnAmount;
+    } else {
+      errorMessage("Insufficient Cash Amount!");
+    }
   } else {
-    errorMessage("Insufficient Cash Amount!");
+    errorMessage("Bill Amount should be greater than 0");
   }
 });
 
