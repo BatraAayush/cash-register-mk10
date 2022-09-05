@@ -27,7 +27,7 @@ checkBtn.addEventListener("click", () => {
     if (Number(cashAmt.value) >= Number(billAmt.value)) {
       let returnAmount = Number(cashAmt.value) - Number(billAmt.value);
       noteCalculator(returnAmount);
-      rtn.innerHTML = "₹" + returnAmount;
+      rtn.innerHTML = "&#8377;" + returnAmount;
     } else {
       errorMessage("Insufficient Cash Amount!");
     }
