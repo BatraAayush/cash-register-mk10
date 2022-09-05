@@ -9,38 +9,43 @@
   </head>
   <body>
     <h1>CASH REGISTER</h1>
-      <label for="bill-amount">Bill Amount:</label>
-      <input id="bill-amount" type="number" required />
+    <span id="error-message"></span>
+    <label for="bill-amount">Bill Amount:</label>
+    <input id="bill-amount" type="number" required />
+    <br>
+    <button id="bill-button">OK</button>
+
+    <div id="hidden">
       <br />
       <label for="cash-amount">Cash Amount:</label>
       <input type="number" id="cash-amount" required />
       <br />
       <button id="check-btn">Check</button>
 
-    <div id="error-message"></div>
-    <p>Number of notes to be returned is <span id="return"></span></p>
-    <table>
-      <tr>
-        <th>No of Notes</th>
-        <td class="no-of-notes"></td>
-        <td class="no-of-notes"></td>
-        <td class="no-of-notes"></td>
-        <td class="no-of-notes"></td>
-        <td class="no-of-notes"></td>
-        <td class="no-of-notes"></td>
-        <td class="no-of-notes"></td>
-      </tr>
-      <tr>
-        <th>notes</th>
-        <td>2000</td>
-        <td>500</td>
-        <td>100</td>
-        <td>20</td>
-        <td>10</td>
-        <td>5</td>
-        <td>1</td>
-      </tr>
-    </table>
+      <p>Number of notes to be returned is <span id="return"></span></p>
+      <table>
+        <tr>
+          <th>No of Notes</th>
+          <td class="no-of-notes"></td>
+          <td class="no-of-notes"></td>
+          <td class="no-of-notes"></td>
+          <td class="no-of-notes"></td>
+          <td class="no-of-notes"></td>
+          <td class="no-of-notes"></td>
+          <td class="no-of-notes"></td>
+        </tr>
+        <tr>
+          <th>notes</th>
+          <td>2000</td>
+          <td>500</td>
+          <td>100</td>
+          <td>20</td>
+          <td>10</td>
+          <td>5</td>
+          <td>1</td>
+        </tr>
+      </table>
+    </div>
 
     <script src="main.js"></script>
   </body>
