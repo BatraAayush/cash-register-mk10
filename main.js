@@ -27,13 +27,16 @@ billBtn.addEventListener("click", () => {
 checkBtn.addEventListener("click", () => {
   message.style.display = "none";
   cashTable.style.display = "none";
+  output.style.display = "none";
   if (Number(billAmt.value) > 0) {
     if (Number(cashAmt.value) > Number(billAmt.value)) {
       let returnAmount = Number(cashAmt.value) - Number(billAmt.value);
       cashTable.style.display = "table";
       noteCalculator(returnAmount);
+      output.style.display = "block";
       output.innerHTML = `Amount to be returned is <strong id="return">&#8377;${returnAmount}</strong>`;
     } else if (Number(cashAmt.value) === Number(billAmt.value)){
+      output.style.display = "block";
       output.innerHTML = `Bill has been paid`;      
     } else {
       errorMessage("Insufficient Cash Amount!");
