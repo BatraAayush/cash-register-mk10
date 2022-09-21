@@ -3,15 +3,18 @@ const cashAmt = document.querySelector("#cash-amount");
 const checkBtn = document.querySelector("#check-btn");
 const noOfNotes = document.querySelectorAll(".no-of-notes");
 const message = document.querySelector("#error-message");
-const rtn = document.querySelector("#return");
+const output = document.querySelector("#output");
 const hidden = document.querySelector("#hidden");
 const billBtn = document.querySelector("#bill-button");
 const notes = [2000, 500, 100, 20, 10, 5, 1];
+const cashTable = document.querySelector("#cashTable");
 
 hidden.style.display = "none";
 
 billBtn.addEventListener("click", () => {
   message.style.display = "none";
+  cashTable.style.display = "none";
+
 
   if (Number(billAmt.value) > 0) {
     hidden.style.display = "block";
@@ -23,11 +26,15 @@ billBtn.addEventListener("click", () => {
 
 checkBtn.addEventListener("click", () => {
   message.style.display = "none";
+  cashTable.style.display = "none";
   if (Number(billAmt.value) > 0) {
-    if (Number(cashAmt.value) >= Number(billAmt.value)) {
+    if (Number(cashAmt.value) > Number(billAmt.value)) {
       let returnAmount = Number(cashAmt.value) - Number(billAmt.value);
+      cashTable.style.display = "table";
       noteCalculator(returnAmount);
-      rtn.innerHTML = "&#8377;" + returnAmount;
+      output.innerHTML = `Amount to be returned is <strong id="return">&#8377;${returnAmount}</strong>`;
+    } else if (Number(cashAmt.value) === Number(billAmt.value)){
+      output.innerHTML = `Bill has been paid`;      
     } else {
       errorMessage("Insufficient Cash Amount!");
     }
